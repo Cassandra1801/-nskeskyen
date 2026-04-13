@@ -10,8 +10,8 @@ public class Wish {
     private String description;
     private String type;
     private int price;
-    private boolean reserve;
-    private boolean favorite;
+    private boolean is_reserved;
+    private boolean is_favorite;
     private String link;
 
     public Wish() {}
@@ -26,8 +26,8 @@ public class Wish {
         this.description = description;
         this.type = type;
         this.price = price;
-        this.reserve = reserve;
-        this.favorite = favorite;
+        this.is_reserved = reserve;
+        this.is_favorite = favorite;
         this.link = link;
     }
 
@@ -62,11 +62,11 @@ public class Wish {
     }
 
     public boolean getReserve() {
-        return reserve;
+        return is_reserved;
     }
 
     public boolean getFavorite() {
-        return favorite;
+        return is_favorite;
     }
 
     public String getLink() {
@@ -93,10 +93,10 @@ public class Wish {
     }
 
     public void setReserve(boolean reserve) {
-        this.reserve = this.reserve;
+        is_reserved = reserve;
     }
 
     public void setFavorite(boolean favorite) {
-        this.favorite = favorite;
+        is_favorite = favorite;
     }
 }
