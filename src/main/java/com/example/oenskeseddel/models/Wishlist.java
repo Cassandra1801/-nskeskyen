@@ -1,11 +1,18 @@
 package com.example.oenskeseddel.models;
+import jakarta.persistence.*;
 import java.time.LocalDate;
 
+@Entity                       // "denne klasse er en databasetabel"
+@Table(name = "wishlists")   // "tabellen hedder wishlists"
 public class Wishlist {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int wishlist_Id;
     private String name;
     private String username;
     private LocalDate date;
+
 
     public Wishlist() {}
 
