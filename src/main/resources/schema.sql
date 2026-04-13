@@ -2,9 +2,9 @@ CREATE DATABASE IF NOT EXISTS wishlist;
 USE wishlist;
 
 -- Drop i omvendt rækkefølge pga. foreign key constraints
-DROP TABLE IF EXISTS wishes;
-DROP TABLE IF EXISTS wishlists;
-DROP TABLE IF EXISTS users;
+# DROP TABLE IF EXISTS wishes;
+# DROP TABLE IF EXISTS wishlists;
+# DROP TABLE IF EXISTS users;
 
 CREATE TABLE IF NOT EXISTS users(
     user_Id  INT PRIMARY KEY AUTO_INCREMENT,
