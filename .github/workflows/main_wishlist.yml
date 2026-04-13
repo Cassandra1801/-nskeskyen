@@ -60,4 +60,10 @@ jobs:
           app-name: 'Wishlist'
           slot-name: 'Production'
           package: '*.jar'
+
+      - name: Start Azure Web App
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            az webapp start --name Wishlist --resource-group Wishlist
           
