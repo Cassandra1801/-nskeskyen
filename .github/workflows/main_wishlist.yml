@@ -53,6 +53,12 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_F769F2F237DE43678E9FEC48CE7AB4D6 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_806B646607F442EAB4C59CB9DFB87DDA }}
 
+      - name: Start Azure Web App
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            az webapp start --name Wishlist --resource-group Wishlist
+
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
@@ -61,9 +67,5 @@ jobs:
           slot-name: 'Production'
           package: '*.jar'
 
-      - name: Start Azure Web App
-        uses: azure/CLI@v1
-        with:
-          inlineScript: |
-            az webapp start --name Wishlist --resource-group Wishlist
+
           
