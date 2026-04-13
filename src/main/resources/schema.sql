@@ -1,4 +1,4 @@
-CREATE TABLE users (
+CREATE TABLE IF NOT EXISTS users (
                        user_id INT AUTO_INCREMENT PRIMARY KEY,
                        username VARCHAR(50) NOT NULL UNIQUE,
                        password VARCHAR(255) NOT NULL,
@@ -6,7 +6,7 @@ CREATE TABLE users (
                        name VARCHAR(50) NOT NULL
 );
 
-CREATE TABLE wishlists (
+CREATE TABLE IF NOT EXISTS wishlists (
                            wishlist_id INT AUTO_INCREMENT PRIMARY KEY,
                            user_id INT NOT NULL,
                            name VARCHAR(50) NOT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE wishlists (
                                ON DELETE CASCADE
 );
 
-CREATE TABLE wishes (
+CREATE TABLE IF NOT EXISTS wishes (
                         wish_id INT AUTO_INCREMENT PRIMARY KEY,
                         wishlist_id INT NOT NULL,
                         name VARCHAR(50) NOT NULL,
