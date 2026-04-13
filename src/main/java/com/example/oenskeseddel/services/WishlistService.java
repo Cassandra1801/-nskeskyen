@@ -1,5 +1,6 @@
 package com.example.oenskeseddel.services;
 
+import com.example.oenskeseddel.models.User;
 import com.example.oenskeseddel.models.Wishlist;
 import com.example.oenskeseddel.repositories.WishlistRepository;
 import org.springframework.stereotype.Service;
@@ -13,9 +14,7 @@ public class WishlistService {
         this.wishlistRepository = wishlistRepository;
     }
 
-    public void createWishlist(String name) {
-        Wishlist wishlist = new Wishlist();
-        wishlist.setUsername(name);
-        wishlistRepository.save(wishlist);
+    public Wishlist createWishlist(User user, String name) {
+        return wishlistRepository.save(new Wishlist(user, name));
     }
 }

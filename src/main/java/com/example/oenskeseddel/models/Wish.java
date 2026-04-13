@@ -1,44 +1,67 @@
 package com.example.oenskeseddel.models;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
+import java.math.BigDecimal;
+
+@Entity
+@Table(name = "wishes")
 public class Wish {
 
-    private int wish_Id;
-    private int wishlist_Id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "wish_id")
+    private Integer wishId;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "wishlist_id", nullable = false)
+    private Wishlist wishlist;
+
+    @Column(nullable = false, length = 50)
     private String name;
+
+    @Column(length = 50)
     private String brand;
+
+    @Column(length = 255)
     private String description;
+
+    @Column(length = 50)
     private String type;
-    private int price;
-    private boolean is_reserved;
-    private boolean is_favorite;
+
+    @Column(precision = 10, scale = 2)
+    private BigDecimal price;
+
+    @Column(length = 255)
     private String link;
 
-    public Wish() {}
+    @Column(name = "is_favorite", nullable = false)
+    private boolean favorite;
 
+    @Column(name = "is_reserved", nullable = false)
+    private boolean reserved;
 
-    public Wish(int wish_Id, int wishlist_Id, String name, String brand, String description,
-                String type, int price, Boolean favorite, Boolean reserve, String link) {
-        this.wish_Id = wish_Id;
-        this.wishlist_Id = wishlist_Id;
+    public Wish() {
+    }
+
+    public Wish(Wishlist wishlist, String name) {
+        this.wishlist = wishlist;
         this.name = name;
-        this.brand = brand;
-        this.description = description;
-        this.type = type;
-        this.price = price;
-        this.is_reserved = reserve;
-        this.is_favorite = favorite;
-        this.link = link;
     }
 
-
-
-    public int getWish_Id() {
-        return wish_Id;
+    public Integer getWishId() {
+        return wishId;
     }
 
-    public int getWishlist_Id() {
-        return wishlist_Id;
+    public Wishlist getWishlist() {
+        return wishlist;
     }
 
     public String getName() {
@@ -57,24 +80,25 @@ public class Wish {
         return type;
     }
 
-    public int getPrice() {
+    public BigDecimal getPrice() {
         return price;
-    }
-
-    public boolean getReserve() {
-        return is_reserved;
-    }
-
-    public boolean getFavorite() {
-        return is_favorite;
     }
 
     public String getLink() {
         return link;
     }
 
+    public boolean isFavorite() {
+        return favorite;
+    }
 
+    public boolean isReserved() {
+        return reserved;
+    }
 
+    public void setWishlist(Wishlist wishlist) {
+        this.wishlist = wishlist;
+    }
 
     public void setName(String name) {
         this.name = name;
@@ -88,15 +112,23 @@ public class Wish {
         this.description = description;
     }
 
-    public void setPrice(int price) {
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
-    public void setReserve(boolean reserve) {
-        is_reserved = reserve;
+    public void setLink(String link) {
+        this.link = link;
     }
 
     public void setFavorite(boolean favorite) {
-        is_favorite = favorite;
+        this.favorite = favorite;
+    }
+
+    public void setReserved(boolean reserved) {
+        this.reserved = reserved;
     }
 }

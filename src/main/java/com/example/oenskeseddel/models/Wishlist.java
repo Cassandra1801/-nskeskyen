@@ -1,53 +1,76 @@
 package com.example.oenskeseddel.models;
-import jakarta.persistence.*;
-import java.time.LocalDate;
 
-@Entity                       // "denne klasse er en databasetabel"
-@Table(name = "wishlists")   // "tabellen hedder wishlists"
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.Table;
+
+import java.time.LocalDateTime;
+
+@Entity
+@Table(name = "wishlist")
 public class Wishlist {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int wishlist_Id;
+    @Column(name = "wishlist_id")
+    private Integer wishlistId;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
+    @Column(nullable = false, length = 50)
     private String name;
-    private String username;
-    private LocalDate date;
 
+    @Column(name = "created_at", nullable = false)
+    private LocalDateTime createdAt;
 
-    public Wishlist() {}
+    public Wishlist() {
+    }
 
-    public Wishlist(int wishlist_Id, String name, String username, LocalDate date){
-        this.wishlist_Id = wishlist_Id;
+    public Wishlist(User user, String name) {
+        this.user = user;
         this.name = name;
-        this.username = username;
-        this.date = LocalDate.now();
     }
 
-    public int getWishlist_Id(){
-        return wishlist_Id;
+    @PrePersist
+    void onCreate() {
+        if (createdAt == null) {
+            createdAt = LocalDateTime.now();
+        }
     }
 
-    public String getName(){
+    public Integer getWishlistId() {
+        return wishlistId;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public String getName() {
         return name;
     }
 
-    public String getUsername(){
-        return username;
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 
-    public LocalDate getDate(){
-        return date;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setUsername (String username){
-        this.username = username;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 }
