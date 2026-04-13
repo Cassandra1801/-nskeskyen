@@ -4,6 +4,9 @@ import com.example.oenskeseddel.repositories.WishlistRepository;
 import com.example.oenskeseddel.services.WishlistService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import static org.mockito.Mockito.verify;
+import static org.mockito.ArgumentMatchers.any;
+import com.example.oenskeseddel.models.Wishlist;
 
 import static org.mockito.Mockito.mock;
 

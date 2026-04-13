@@ -32,7 +32,15 @@ public class Wishlist {
         return date;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public void setUsername (String username){
         this.username = username;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 }
