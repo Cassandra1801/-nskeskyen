@@ -2,9 +2,9 @@ CREATE DATABASE IF NOT EXISTS wishlist;
 USE wishlist;
 
 -- Drop i omvendt rækkefølge pga. foreign key constraints
-# DROP TABLE IF EXISTS wishes;
-# DROP TABLE IF EXISTS wishlists;
-# DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS wishes;
+DROP TABLE IF EXISTS wishlists;
+DROP TABLE IF EXISTS users;
 
 CREATE TABLE IF NOT EXISTS users(
     user_Id  INT PRIMARY KEY AUTO_INCREMENT,
@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS users(
     name     VARCHAR(50)  NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS wishlists(
+CREATE TABLE IF NOT EXISTS flexibleserverdb(
     wishlist_Id INT PRIMARY KEY AUTO_INCREMENT,
     user_Id     INT         NOT NULL,           -- kolonnen skal defineres!
     name        VARCHAR(50) NOT NULL,
@@ -33,5 +33,5 @@ CREATE TABLE IF NOT EXISTS wishes(
     link        VARCHAR(255),                   -- URLs kan være lange
     is_favorite BOOLEAN DEFAULT FALSE,
     is_reserved BOOLEAN DEFAULT FALSE,
-    FOREIGN KEY (wishlist_Id) REFERENCES wishlists (wishlist_Id) ON DELETE CASCADE
+    FOREIGN KEY (wishlist_Id) REFERENCES flexibleserverdb (wishlist_Id) ON DELETE CASCADE
 );
