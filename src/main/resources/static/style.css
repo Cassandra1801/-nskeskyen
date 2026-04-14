@@ -1,40 +1,80 @@
 body {
-    margin: 0;
-    font-family: "Segoe UI", sans-serif;
-    background: linear-gradient(180deg, #f8f6f1 0%, #efe8d8 100%);
-    color: #1f2933;
+    color: #3a2414;
 }
 
-.hero {
-    min-height: 100vh;
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.header,
+.create-list,
+.lists-section,
+.footer {
+    background-color: #efe7dc;
+    border: 1px solid #d7bfa6;
+    border-radius: 25px;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.header-icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.header-icons button,
+.login-btn,
+.create-btn {
+    border: none;
+    border-radius: 20px;
+    padding: 12px 20px;
+    cursor: pointer;
+}
+
+.login-btn,
+.create-btn {
+    background-color: #2b180c;
+    color: white;
+}
+
+.create-list {
+    text-align: center;
+}
+
+.create-btn {
+    font-size: 22px;
+}
+
+.lists-section {
     display: grid;
-    place-items: center;
-    padding: 2rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
-.hero__content {
-    max-width: 42rem;
-    padding: 3rem;
-    border-radius: 24px;
-    background: rgba(255, 255, 255, 0.78);
-    box-shadow: 0 24px 60px rgba(31, 41, 51, 0.12);
+.card {
+    background: white;
+    border: 1px solid #d7bfa6;
+    border-radius: 18px;
+    padding: 20px;
+    margin-bottom: 15px;
 }
 
-.eyebrow {
-    margin: 0 0 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    font-size: 0.85rem;
-    color: #7c5c2f;
+.footer {
+    text-align: left;
 }
 
-h1 {
-    margin: 0 0 1rem;
-    font-size: clamp(2.6rem, 6vw, 5rem);
-}
 
-p {
-    margin: 0;
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
