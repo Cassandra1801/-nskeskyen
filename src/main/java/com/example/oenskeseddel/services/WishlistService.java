@@ -17,4 +17,14 @@ public class WishlistService {
     public Wishlist createWishlist(User user, String name) {
         return wishlistRepository.save(new Wishlist(user, name));
     }
+
+
+    //Creation of the sharing URL for sharing wishlists.
+    public String generateShareLink(Integer wishlist_id) {
+
+
+
+        return "onskesedlen-gphsgcahg3d6eae6.westeurope-01.azurewebsites.net/share/" + wishlist_id;
+    }
+
 }
