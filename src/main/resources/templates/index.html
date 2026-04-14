@@ -1,46 +1,60 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="da" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ønskeliste</title>
-    <link rel="stylesheet" th:href="@{/style.css}">
+    <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}">
 </head>
 <body>
-<div class="container">
     <header class="header">
-        <div class="logo">🎁 ØNSKELISTE</div>
-        <div class="header-icons">
-            <button>🔔</button>
-            <button>👤</button>
-            <button class="login-btn">Login</button>
+        <div class="logo">
+            <img th:src="@{/images/Gave.png}" alt="logo">
+            <span>ØNSKELISTE</span>
         </div>
+
+            <div class="header-icons">
+
+                <button class="icon-btn">
+                    <img th:src="@{/images/Klokke.png}" alt="Notification">
+                </button>
+
+                <button class="icon-btn">
+                    <img th:src="@{/images/Person.png}" alt="profile">
+                </button>
+
+                <button class="login-btn">Login</button>
+
+            </div>
+
     </header>
 
-    <section class="create-list">
-        <button class="create-btn">+ Opret ny ønskeliste</button>
-    </section>
 
-    <section class="lists-section">
-        <div class="list-column">
-            <h2>Mine ønskelister</h2>
-            <div class="card">Fødselsdag – 12 ønsker</div>
-            <div class="card">Jul – 8 ønsker</div>
-            <div class="card">Ønsker 2022 – 15 ønsker</div>
+
+
+    <footer>
+        <h2>Contact info</h2>
+        <div class="footer-info">
+            <div class="footer-contact">
+                <span>email@example.com</span>
+                <span>+45 12 34 56 78</span>
+            </div>
+            <div class="footer-SoMe-group">
+                <div class="footer-SoMe">Facebook</div>
+                <div class="footer-SoMe">Instagram</div>
+            </div>
         </div>
-
-        <div class="list-column">
-            <h2>Delt med mig</h2>
-            <div class="card">Mors ønskeliste – 7 ønsker</div>
-            <div class="card">Vens ønskeliste – 10 ønsker</div>
+        <hr>
+        <div class="footer-collaborators">
+            <div class="collaborators-boxes">
+                <h4>Collaborators:</h4>
+                <div class="partner-box">NIKE</div>
+                <div class="partner-box">Apple</div>
+                <div class="partner-box">Zalando</div>
+                <div class="partner-box">Zalando</div>
+                <div class="partner-box">SAMSUNG</div>
+            </div>
         </div>
-    </section>
-
-    <footer class="footer">
-        <h3>Kontakt os:</h3>
-        <p>✉ info@site.dk | 📞 1234 5678</p>
     </footer>
-</div>
-<body>
+</body>
 </html>
-
