@@ -5,7 +5,7 @@ import com.example.oenskeseddel.models.Wishlist;
 import com.example.oenskeseddel.repositories.WishlistRepository;
 import org.springframework.stereotype.Service;
 
-@Service
+//@Service
 public class WishlistService {
 
     private final WishlistRepository wishlistRepository;
