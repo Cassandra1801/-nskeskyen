@@ -13,64 +13,18 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
-    private Integer userId;
+    private Long userId;
 
-    @Column(nullable = false, unique = true, length = 50)
+    @Column(nullable = false, unique = true)
     private String username;
 
-    @Column(nullable = false, length = 50)
-    private String mail;
-
-    @Column(nullable = false, length = 50)
-    private String name;
-
-    @Column(nullable = false, length = 255)
+    @Column(nullable = false)
     private String password;
 
-    public User() {
-    }
+    @Column(nullable = false, unique = true)
+    private String email;
 
-    public User(String username, String mail, String name, String password) {
-        this.username = username;
-        this.mail = mail;
-        this.name = name;
-        this.password = password;
-    }
+    private String name;
 
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getMail() {
-        return mail;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public void setMail(String mail) {
-        this.mail = mail;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
+    public User() {}
 }
