@@ -4,7 +4,7 @@ import com.example.oenskeseddel.models.User;
 import com.example.oenskeseddel.repositories.UserRepository;
 import org.springframework.stereotype.Service;
 
-@Service
+//@Service
 public class UserService {
 
     private final UserRepository userRepository;
