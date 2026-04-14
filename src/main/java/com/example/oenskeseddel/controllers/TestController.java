@@ -16,14 +16,14 @@ public class TestController {
     @GetMapping("/db-test")
     public String testDatabase() {
         try {
-            Integer count = jdbcTemplate.queryForObject(
+            Integer userCount = jdbcTemplate.queryForObject(
                     "SELECT COUNT(*) FROM users",
                     Integer.class
             );
 
-            return "Azure connection works. Users in database: " + count;
+            return "DB works! Users in table: " + userCount;
         } catch (Exception e) {
-            return "Database test failed: " + e.getMessage();
+            return "DB error: " + e.getMessage();
         }
     }
 }
