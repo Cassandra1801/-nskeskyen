@@ -29,6 +29,8 @@ body {
     width: 28px;
     height: 28px;
     object-fit: cover;
+    background: transparent;
+    mix-blend-mode: multiply;
 }
 
 .header-icons {
@@ -50,9 +52,10 @@ body {
 }
 
 .icon-btn img {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     object-fit: cover;
+    mix-blend-mode: multiply;
 }
 
 .login-btn {
