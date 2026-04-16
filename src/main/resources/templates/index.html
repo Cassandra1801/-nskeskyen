@@ -48,11 +48,13 @@
             <div class="vertical-line"></div>
 
             <section class="wishlists-panel">
-                <div class="panel-header">
-                    <img src="/images/bookmark.png" alt="shared">
-                    <h3>Shared wishlists</h3>
-                </div>
-                <hr>
+                <a th:href="@{/sharedWishlists}" class="shared-link">
+                    <div class="panel-header">
+                        <img src="/images/bookmark.png" alt="shared">
+                        <h3>Shared wishlists</h3>
+                    </div>
+                </a>
+                    <hr>
                 <div class="wishlist-grid">
                     <button type="button" class="lists-btn full-width">50th Birthday</button>
                     <button type="button" class="lists-btn full-width">B-day!</button>
