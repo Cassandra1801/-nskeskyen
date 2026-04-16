@@ -3,8 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}">
+
+
 </head>
 <body>
+<header class="header">
+    <div class="logo">
+        <img src="/images/gift.png" alt="logo">
+        <span>ØNSKELISTE</span>
+    </div>
+
+    <div class="header-icons">
+        <button type="button" class="icon-btn">
+            <img src="/images/bell-ring.png" alt="Notification">
+        </button>
+
+        <button type="button" class="icon-btn">
+            <img src="/images/user-round.png" alt="Profile">
+        </button>
+
+        <button type="button" class="login-btn">Login</button>
+    </div>
+</header>
+
+
+
+
+
+
+
+
+
+
+<footer>
+    <h2>Contact info</h2>
+    <div class="footer-info">
+        <div class="footer-contact">
+            <span>email@example.com</span>
+            <span>+45 12 34 56 78</span>
+        </div>
+        <div class="footer-SoMe-group">
+            <button type="button" class="footer-SoMe">Facebook</button>
+            <button type="button" class="footer-SoMe">Instagram</button>
+        </div>
+    </div>
+    <hr>
+    <div class="footer-collaborators">
+        <div class="collaborators-boxes">
+            <h4>Collaborators:</h4>
+            <div class="partner-box">NIKE</div>
+            <div class="partner-box">Apple</div>
+            <div class="partner-box">Zalando</div>
+            <div class="partner-box">Zalando</div>
+            <div class="partner-box">SAMSUNG</div>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>
