@@ -13,51 +13,47 @@
             <span>ØNSKELISTE</span>
         </div>
 
-            <div class="header-icons">
+        <div class="header-icons">
+            <button type="button" class="icon-btn">
+                <img src="/images/bell-ring.png" alt="Notification">
+            </button>
 
-                <button class="icon-btn">
-                    <img src="/images/bell-ring.png" alt="Notification">
-                </button>
+            <button type="button" class="icon-btn">
+                <img src="/images/user-round.png" alt="Profile">
+            </button>
 
-                <button class="icon-btn">
-                    <img src="/images/user-round.png" alt="profile">
-                </button>
-
-                <button class="login-btn">Login</button>
-            </div>
+            <button type="button" class="login-btn">Login</button>
+        </div>
     </header>
-<main>
-    <div class="create">
-        <button class="create-btn">+ Create new wishlist</button>
-    </div>
 
-    <div class="wishlists">
-
-        <div class="wishlists-btn">
-            <h3>My wishlists</h3>
-            <hr>
-            <div class="wishlist-grid">
-                <button class="lists-btn">Birthday</button>
-                <button class="lists-btn">Christmas</button>
-                <button class="lists-btn full-width">Wishes</button>
-            </div>
+    <main>
+        <div class="create">
+            <button type="button" class="create-btn">+ Create new wishlist</button>
         </div>
 
-        <div class="vertical-line"></div>
+        <div class="wishlists">
+            <section class="wishlists-panel">
+                <h3>My wishlists</h3>
+                <hr>
+                <div class="wishlist-grid">
+                    <button type="button" class="lists-btn">Birthday</button>
+                    <button type="button" class="lists-btn">Christmas</button>
+                    <button type="button" class="lists-btn full-width">Wishes</button>
+                </div>
+            </section>
 
-            <div class="shared-btn">
+            <div class="vertical-line"></div>
+
+            <section class="wishlists-panel">
                 <h3>Shared wishlists</h3>
                 <hr>
                 <div class="wishlist-grid">
-                    <div class="lists-btn full-width">50th Birthday</div>
-                    <div class="lists-btn full-width">B-day!</div>
+                    <button type="button" class="lists-btn full-width">50th Birthday</button>
+                    <button type="button" class="lists-btn full-width">B-day!</button>
                 </div>
-            </div>
+            </section>
         </div>
-</main>
-
-
-
+    </main>
 
     <footer>
         <h2>Contact info</h2>
@@ -67,8 +63,8 @@
                 <span>+45 12 34 56 78</span>
             </div>
             <div class="footer-SoMe-group">
-                <button class="footer-SoMe">Facebook</button>
-                <button class="footer-SoMe">Instagram</button>
+                <button type="button" class="footer-SoMe">Facebook</button>
+                <button type="button" class="footer-SoMe">Instagram</button>
             </div>
         </div>
         <hr>
