@@ -1,12 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    margin: 0;
+    margin: 0 0 20px 0;
+    width: 100%;
+    padding: 20px;
+    overflow-x: hidden;
     font-family: Arial, sans-serif;
     background-color: #f7f1e8;
 }
 
 .header {
-    margin: 20px;
-    width: calc(100% - 40px);
+    margin: 0 0 20px 0;
+    width: 100%;
     background-color: #efe7dc;
     border: 1px solid #d7bfa6;
     border-radius: 20px;
@@ -66,9 +73,88 @@ body {
     cursor: pointer;
 }
 
+.create {
+    margin: 0 0 20px 0;
+    width: 100%;
+    background-color: #efe7dc;
+    border: 1px solid #d7bfa6;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.create-btn {
+    background-color: #c9b09a;
+    color: #2e1f0f;
+    border: none;
+    border-radius: 20px;
+    padding: 16px 40px;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: fit-content;
+}
+
+.wishlists {
+    margin: 0 0 20px 0;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #efe7dc;
+    border: 1px solid #d7bfa6;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.wishlist-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    align-items: stretch;
+}
+
+.lists-btn {
+    border: 1px solid #d7bfa6;
+    border-radius: 20px;
+    padding: 20px 30px;
+    background-color: #faf6f1;
+    font-weight: bold;
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+.vertical-line {
+    width: 1px;
+    min-height: 200px;
+    background-color: #d7bfa6;
+    margin: 0 10px;
+}
+
+.wishlists-btn, .shared-btn {
+    flex: 1;
+    max-width: 400px;
+}
+
 footer {
-    margin: 20px;
-    width: calc(100% - 40px);
+    margin: 0 0 20px 0;
+    width: 100%;
     background-color: #efe7dc;
     border: 1px solid #d7bfa6;
     border-radius: 20px;
@@ -110,6 +196,7 @@ footer hr {
     color: #2e1f0f;
     font-weight: bold;
     background-color: #faf6f1;
+    cursor: pointer;
 }
 
 .collaborators-boxes {
