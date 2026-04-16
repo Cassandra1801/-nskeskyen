@@ -51,7 +51,7 @@ body {
     border-radius: 50%;
     background-color: #e7dccd;
     display: flex;
-    justify-items: center;
+    justify-content: center;
     align-items: center;
     cursor: pointer;
 }
