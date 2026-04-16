@@ -10,7 +10,7 @@
     <header class="header">
         <div class="logo">
             <img src="/images/gift.png" alt="logo">
-            <span>ØNSKELISTE</span>
+            <span>WISHLIST</span>
         </div>
 
         <div class="header-icons">
@@ -28,12 +28,15 @@
 
     <main>
         <div class="create">
-            <a type="button" class="create-btn">+ Create new wishlist</a>
+            <a th:href="@{/create}" class="create-btn">+ Create new wishlist</a>
         </div>
 
         <div class="wishlists">
             <section class="wishlists-panel">
-                <h3>My wishlists</h3>
+                <div class="panel-header">
+                    <img src="/images/users.png" alt="wishlists">
+                    <h3>My wishlists</h3>
+                </div>
                 <hr>
                 <div class="wishlist-grid">
                     <button type="button" class="lists-btn">Birthday</button>
@@ -45,7 +48,10 @@
             <div class="vertical-line"></div>
 
             <section class="wishlists-panel">
-                <h3>Shared wishlists</h3>
+                <div class="panel-header">
+                    <img src="/images/bookmark.png" alt="shared">
+                    <h3>Shared wishlists</h3>
+                </div>
                 <hr>
                 <div class="wishlist-grid">
                     <button type="button" class="lists-btn full-width">50th Birthday</button>

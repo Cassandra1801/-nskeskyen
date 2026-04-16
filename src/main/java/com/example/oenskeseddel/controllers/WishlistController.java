@@ -21,7 +21,7 @@ public class WishlistController {
         return wishlistService.createWishlist(userId, name);
     }
 
-    
+    @Controller
     public class PageController {
 
         @GetMapping("/opret")
