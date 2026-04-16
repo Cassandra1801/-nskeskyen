@@ -20,13 +20,5 @@ public class WishlistController {
                                    @RequestParam String name) {
         return wishlistService.createWishlist(userId, name);
     }
-
-    @Controller
-    public class PageController {
-
-        @GetMapping("/opret")
-        public String showCreateWishlistPage() {
-            return "opret";
-        }
-    }
 }
+
