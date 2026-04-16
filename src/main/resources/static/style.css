@@ -13,6 +13,16 @@
     box-sizing: border-box;
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
 body {
     margin: 0 0 20px;
     width: 100%;
@@ -30,7 +40,9 @@ button {
 
 .header,
 .create,
-.wishlists,
+.wishlist-overview,
+.detail-header,
+.wishes-section,
 footer {
     margin: 0 0 20px;
     width: 100%;
@@ -76,7 +88,6 @@ footer {
     border: none;
     border-radius: 50%;
     background-color: var(--color-surface-muted);
-    cursor: pointer;
 }
 
 .icon-btn img {
@@ -86,15 +97,21 @@ footer {
 }
 
 .login-btn,
-.create-btn {
+.create-btn,
+.share-btn,
+.edit-btn,
+.delete-btn {
     border: none;
     border-radius: var(--radius-lg);
     background-color: var(--color-surface-strong);
     font-weight: bold;
-    cursor: pointer;
 }
 
-.login-btn {
+.login-btn,
+.share-btn,
+.edit-btn,
+.delete-btn,
+.wishes-grid{
     padding: 8px 18px;
     font-size: 16px;
 }
@@ -114,14 +131,14 @@ footer {
     font-size: 22px;
 }
 
-.wishlists {
+.wishlist-overview {
     display: flex;
     align-items: stretch;
     justify-content: center;
     gap: 20px;
 }
 
-.wishlists-panel {
+.wishlist-column {
     flex: 1;
     max-width: 400px;
 }
@@ -132,22 +149,26 @@ footer {
     gap: 8px;
 }
 
-.wishlists-panel img {
+.panel-header-centered {
+    justify-content: center;
+}
+
+.wishlist-column img {
     width: 20px;
     height: 20px;
     object-fit: cover;
 }
 
-
-.wishlist-grid {
+.wishlist-grid,
+.wishes-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     align-items: stretch;
 }
 
-.lists-btn,
-.footer-SoMe,
+.wishlist-card,
+.footer-social-btn,
 .partner-box {
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
@@ -155,7 +176,7 @@ footer {
     font-weight: bold;
 }
 
-.lists-btn {
+.wishlist-card {
     appearance: none;
     -webkit-appearance: none;
     display: flex;
@@ -202,20 +223,51 @@ footer hr {
 }
 
 .footer-contact,
-.footer-SoMe-group,
+.footer-social-group,
 .collaborators-boxes {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.footer-SoMe,
+.footer-social-btn,
 .partner-box {
     padding: 5px 15px;
     min-width: 80px;
     text-align: center;
 }
 
-.footer-SoMe {
+.footer-social-btn {
     cursor: pointer;
+}
+
+.detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wishes-section {
+    width: 100%;
+}
+
+.wishes-panel {
+    width: 100%;
+}
+
+.wishes-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.wishes-add-link {
+    margin-left: auto;
+    font-weight: bold;
+}
+
+.detail-actions {
+    display: flex;
+    gap: 10px;
 }

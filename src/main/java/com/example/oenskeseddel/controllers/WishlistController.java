@@ -3,9 +3,10 @@ package com.example.oenskeseddel.controllers;
 import com.example.oenskeseddel.models.Wishlist;
 import com.example.oenskeseddel.services.WishlistService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 @RequestMapping("/api/wishlists")
 public class WishlistController {
 
@@ -15,18 +16,16 @@ public class WishlistController {
         this.wishlistService = wishlistService;
     }
 
+    @ResponseBody
     @PostMapping("/create")
     public Wishlist createWishlist(@RequestParam Integer userId,
                                    @RequestParam String name) {
         return wishlistService.createWishlist(userId, name);
     }
 
-    @Controller
-    public class PageController {
-
-        @GetMapping("/opret")
-        public String showCreateWishlistPage() {
-            return "opret";
-        }
+    @GetMapping("/{wishlistId}")
+    public String getWishlistPage(@PathVariable Integer wishlistId, Model model) {
+        model.addAttribute("wishlistId", wishlistId);
+        return "wishlist";
     }
 }
