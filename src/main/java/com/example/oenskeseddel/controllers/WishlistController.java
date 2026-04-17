@@ -22,7 +22,6 @@ public class WishlistController {
                                    @RequestParam String name) {
         return wishlistService.createWishlist(userId, name);
     }
-}
 
     @GetMapping("/{wishlistId}")
     public String getWishlistPage(@PathVariable Integer wishlistId, Model model) {
