@@ -24,13 +24,25 @@ public class WishlistService {
         return wishlistRepository.save(new Wishlist(user, name));
     }
 
+    public Wishlist findById(Integer wishlistId) {
+        return wishlistRepository.findById(wishlistId)
+                .orElseThrow(() -> new RuntimeException("Ønskeliste ikke fundet"));
+    }
 
     //Creation of the sharing URL for sharing wishlists.
-    public String generateShareLink(Integer wishlist_id) {
+    public String generateShareLink(Integer wishlistId) {
+        Wishlist wishlist = wishlistRepository.findById(wishlistId)
+                .orElseThrow(() -> new RuntimeException("Wishlist not found"));
 
+        return "https://onskesedlen-gphsgcahg3d6eae6.westeurope-01.azurewebsites.net/wishlist/"
+                + wishlist.getUser().getUsername()
+                + "/share/"
+                + wishlist.getWishlistId();
+    }
 
-
-        return "onskesedlen-gphsgcahg3d6eae6.westeurope-01.azurewebsites.net/share/" + wishlist_id;
+    public Wishlist getWishlistByUsernameAndId(String username, Integer wishlistId) {
+        return wishlistRepository.findByUserUsernameAndWishlistId(username, wishlistId)
+                .orElseThrow(() -> new RuntimeException("Wishlist not found"));
     }
 
 }

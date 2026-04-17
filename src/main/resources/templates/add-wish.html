@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}">
+    <link rel="stylesheet" th:href="@{/opret.css}">
+
+</head>
+<body>
+<header class="header">
+    <a th:href="@{/}" class="logo">
+        <img src="/images/gift.png" alt="logo">
+        <span>WISHLIST</span>
+    </a>
+
+    <div class="header-icons">
+        <button type="button" class="icon-btn">
+            <img src="/images/bell-ring.png" alt="Notification">
+        </button>
+
+        <button type="button" class="icon-btn">
+            <img src="/images/user-round.png" alt="Profile">
+        </button>
+
+        <button type="button" class="login-btn">Login</button>
+    </div>
+</header>
+
+<main>
+    <section class="create-page-container">
+        <div class="create-card">
+            <h1>Add Wish</h1>
+            <hr>
+
+            <form th:action="@{/create-wish}" method="post" class="create-form">
+
+                <div class="form-group">
+                    <label for="name">Wish</label>
+                    <input type="text"
+                           id="name"
+                           name="name"
+                           placeholder="e.g. Race-car, Barbie, Journal..."
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="brand">Brand</label>
+                    <input type="text"
+                           id="brand"
+                           name="brand"
+                           placeholder="e.g. Adidas, Nike..."
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category" name="category" required>
+                        <option value="">Choose category</option>
+
+                        <option value="APPAREL">Apparel / Clothing</option>
+                        <option value="FOOTWEAR">Shoes & Footwear</option>
+                        <option value="ACCESSORIES">Accessories (bags, jewelry, watches)</option>
+
+                        <option value="BEAUTY">Beauty & Make-up</option>
+                        <option value="SKINCARE">Skincare & Personal Care</option>
+                        <option value="FRAGRANCE">Perfume & Fragrance</option>
+
+                        <option value="TOYS">Toys</option>
+                        <option value="GAMES">Games (board games, puzzles)</option>
+
+                        <option value="ELECTRONICS">Electronics & Gadgets</option>
+                        <option value="GAMING">Gaming (consoles, accessories)</option>
+
+                        <option value="HOME">Home & Living</option>
+                        <option value="KITCHEN">Kitchen & Cooking</option>
+
+                        <option value="SPORT">Sports & Fitness</option>
+                        <option value="OUTDOOR">Outdoor & Travel</option>
+
+                        <option value="BOOKS">Books</option>
+                        <option value="SUBSCRIPTION">Subscriptions / Experiences</option>
+
+                        <option value="OTHER">Other</option>
+                    </select>
+                </div>
+
+
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description"
+                              name="description"
+                              placeholder="Tell people what it is..."></textarea>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="number"
+                           id="price"
+                           name="price"
+                           placeholder="e.g. 199.99"
+                           step="0.01"
+                           min="0"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="link">Link</label>
+                    <input type="url"
+                           id="link"
+                           name="link"
+                           placeholder="An optional link...">
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <label for="favorite">Favorite</label>
+                    <input type="checkbox"
+                           id="favorite"
+                           name="is_favorite"
+                           placeholder="An optional link...">
+                </div>
+
+                <input type="hidden" name="userId" value="1">
+
+                <button type="submit" class="create-btn-submit">
+                    Create wishlist
+                </button>
+
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <h2>Contact info</h2>
+    <div class="footer-info">
+        <div class="footer-contact">
+            <span>email@example.com</span>
+            <span>+45 12 34 56 78</span>
+        </div>
+        <div class="footer-SoMe-group">
+            <button type="button" class="footer-SoMe">Facebook</button>
+            <button type="button" class="footer-SoMe">Instagram</button>
+        </div>
+    </div>
+    <hr>
+    <div class="footer-collaborators">
+        <div class="collaborators-boxes">
+            <h4>Collaborators:</h4>
+            <div class="partner-box">NIKE</div>
+            <div class="partner-box">Apple</div>
+            <div class="partner-box">Zalando</div>
+            <div class="partner-box">Zalando</div>
+            <div class="partner-box">SAMSUNG</div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

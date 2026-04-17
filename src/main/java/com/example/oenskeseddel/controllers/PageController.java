@@ -5,8 +5,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class PageController {
+
     @GetMapping("/opret")
     public String showCreateWishlistPage() {
         return "opret";
+    }
+
+    @GetMapping("/add-wish")
+    public String showAddWishPage() {
+        return "add-wish";
     }
 }
