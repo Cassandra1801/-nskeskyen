@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Wishlist</title>
     <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}">
     <link rel="stylesheet" th:href="@{/opret.css}">
 
@@ -79,23 +80,47 @@
             <span>email@example.com</span>
             <span>+45 12 34 56 78</span>
         </div>
-        <div class="footer-SoMe-group">
-            <button type="button" class="footer-SoMe">Facebook</button>
-            <button type="button" class="footer-SoMe">Instagram</button>
-        </div>
-    </div>
-    <hr>
-    <div class="footer-collaborators">
-        <div class="collaborators-boxes">
-            <h4>Collaborators:</h4>
-            <div class="partner-box">NIKE</div>
-            <div class="partner-box">Apple</div>
-            <div class="partner-box">Zalando</div>
-            <div class="partner-box">Zalando</div>
-            <div class="partner-box">SAMSUNG</div>
-        </div>
-    </div>
-</footer>
+    </header>
 
+    <main class="page-main">
+        <section class="form-shell">
+            <div class="form-card">
+                <h1>Create Wishlist</h1>
+                <p>Choose a name and start building a new wishlist.</p>
+
+                <div class="form-row">
+                    <label for="wishlistName">Wishlist name</label>
+                    <input type="text" id="wishlistName" name="wishlistName" placeholder="Birthday, Christmas, Wishes...">
+                </div>
+
+                <button type="button" class="form-button">Create wishlist</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <h2>Contact info</h2>
+        <div class="footer-info">
+            <div class="footer-contact">
+                <span>email@example.com</span>
+                <span>+45 12 34 56 78</span>
+            </div>
+            <div class="footer-social-group">
+                <button type="button" class="footer-social-btn">Facebook</button>
+                <button type="button" class="footer-social-btn">Instagram</button>
+            </div>
+        </div>
+        <hr>
+        <div class="footer-collaborators">
+            <div class="collaborators-boxes">
+                <h4>Collaborators:</h4>
+                <div class="partner-box">NIKE</div>
+                <div class="partner-box">Apple</div>
+                <div class="partner-box">Zalando</div>
+                <div class="partner-box">Zalando</div>
+                <div class="partner-box">SAMSUNG</div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

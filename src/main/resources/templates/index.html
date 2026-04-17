@@ -26,36 +26,36 @@
         </div>
     </header>
 
-    <main>
+    <main class="page-main">
         <div class="create">
             <a th:href="@{/createWishlist}" class="create-btn">+ Create new wishlist</a>
         </div>
 
-        <div class="wishlists">
-            <section class="wishlists-panel">
-                <div class="panel-header">
+        <div class="wishlist-overview">
+            <section class="wishlist-column">
+                <div class="panel-header panel-header-centered">
                     <img src="/images/users.png" alt="wishlists">
                     <h3>My wishlists</h3>
                 </div>
                 <hr>
                 <div class="wishlist-grid">
-                    <button type="button" class="lists-btn">Birthday</button>
-                    <button type="button" class="lists-btn">Christmas</button>
-                    <button type="button" class="lists-btn full-width">Wishes</button>
+                    <a th:href="@{/api/wishlists/{id}(id=1)}" class="wishlist-card">Birthday</a>
+                    <a th:href="@{/api/wishlists/{id}(id=1)}" class="wishlist-card">Christmas</a>
+                    <a th:href="@{/api/wishlists/{id}(id=1)}" class="wishlist-card full-width">Wishes</a>
                 </div>
             </section>
 
             <div class="vertical-line"></div>
 
-            <section class="wishlists-panel">
-                <div class="panel-header">
+            <section class="wishlist-column">
+                <div class="panel-header panel-header-centered">
                     <img src="/images/bookmark.png" alt="shared">
                     <h3>Shared wishlists</h3>
                 </div>
                 <hr>
                 <div class="wishlist-grid">
-                    <button type="button" class="lists-btn full-width">50th Birthday</button>
-                    <button type="button" class="lists-btn full-width">B-day!</button>
+                    <a th:href="@{/wishlist}" class="wishlist-card full-width">50th Birthday</a>
+                    <a th:href="@{/wishlist}" class="wishlist-card full-width">B-day!</a>
                 </div>
             </section>
         </div>
@@ -68,9 +68,9 @@
                 <span>email@example.com</span>
                 <span>+45 12 34 56 78</span>
             </div>
-            <div class="footer-SoMe-group">
-                <button type="button" class="footer-SoMe">Facebook</button>
-                <button type="button" class="footer-SoMe">Instagram</button>
+            <div class="footer-social-group">
+                <button type="button" class="footer-social-btn">Facebook</button>
+                <button type="button" class="footer-social-btn">Instagram</button>
             </div>
         </div>
         <hr>
