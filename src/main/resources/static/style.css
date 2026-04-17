@@ -158,6 +158,12 @@ footer {
     max-width: 400px;
 }
 
+.shared-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
 .panel-header {
     display: flex;
     align-items: center;

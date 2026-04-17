@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}">
+    <link rel="stylesheet" href="../static/shared.css" th:href="@{/shared.css}">
+</head>
+<body>
+
+<header class="header">
+    <a th:href="@{/}" class="logo">
+        <img src="/images/gift.png" alt="logo">
+        <span>WISHLIST</span>
+    </a>
+
+    <div class="header-icons">
+        <button type="button" class="icon-btn">
+            <img src="/images/bell-ring.png" alt="Notification">
+        </button>
+
+        <button type="button" class="icon-btn">
+            <img src="/images/user-round.png" alt="Profile">
+        </button>
+
+        <button type="button" class="login-btn">Login</button>
+    </div>
+</header>
+
+<main>
+    <section class="shared-page">
+        <div class="shared-container">
+            <div class="shared-title">
+                <h1>Shared with me</h1>
+                <p>Here you can see wishlists that others have shared with you</p>
+            </div>
+
+            <div class="shared-grid">
+                <div class="shared-card">
+                    <div class="shared-card-header">
+                        <img src="/images/user-round.png" alt="shared user">
+                        <h3>50th Birthday</h3>
+                    </div>
+
+                    <p class="shared-by">Shared by Micheal</p>
+
+                    <hr>
+
+                    <div class="shared-card-footer">
+                        <span>7 wishes</span>
+                    </div>
+                </div>
+
+                <div class="shared-card">
+                    <div class="shared-card-header">
+                        <img src="/images/user-round.png" alt="shared user">
+                        <h3>B-day!</h3>
+                    </div>
+
+                    <p class="shared-by">Shared by Clara </p>
+
+                    <hr>
+
+                    <div class="shared-card-footer">
+                        <span>10 wishes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+<footer>
+    <h2>Contact info</h2>
+    <div class="footer-info">
+        <div class="footer-contact">
+            <span>email@example.com</span>
+            <span>+45 12 34 56 78</span>
+        </div>
+        <div class="footer-SoMe-group">
+            <button type="button" class="footer-SoMe">Facebook</button>
+            <button type="button" class="footer-SoMe">Instagram</button>
+        </div>
+    </div>
+    <hr>
+    <div class="footer-collaborators">
+        <div class="collaborators-boxes">
+            <h4>Collaborators:</h4>
+            <div class="partner-box">NIKE</div>
+            <div class="partner-box">Apple</div>
+            <div class="partner-box">Zalando</div>
+            <div class="partner-box">Zalando</div>
+            <div class="partner-box">SAMSUNG</div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

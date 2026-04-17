@@ -28,4 +28,9 @@ public class PageController {
 
         return "redirect:/";
     }
+
+    @GetMapping("/sharedWishlists")
+    public String showSharedWishlistsPage() {
+        return "sharedWishlist";
+    }
 }
