@@ -38,11 +38,17 @@ button {
     color: inherit;
 }
 
+a,
+button {
+    cursor: pointer;
+}
+
 .header,
 .create,
 .wishlist-overview,
 .detail-header,
 .wishes-section,
+.form-shell,
 footer {
     margin: 0 0 20px;
     width: 100%;
@@ -70,6 +76,10 @@ footer {
     width: 28px;
     height: 28px;
     object-fit: cover;
+}
+
+.page-main {
+    width: 100%;
 }
 
 .header-icons {
@@ -100,20 +110,21 @@ footer {
 .create-btn,
 .share-btn,
 .edit-btn,
-.delete-btn {
+.delete-btn,
+.form-button {
     border: none;
     border-radius: var(--radius-lg);
     background-color: var(--color-surface-strong);
     font-weight: bold;
+    font-size: 16px;
 }
 
 .login-btn,
 .share-btn,
 .edit-btn,
 .delete-btn,
-.wishes-grid{
+.form-button {
     padding: 8px 18px;
-    font-size: 16px;
 }
 
 .create {
@@ -123,9 +134,9 @@ footer {
 }
 
 .create-btn {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
     width: fit-content;
     padding: 16px 40px;
     font-size: 22px;
@@ -159,8 +170,7 @@ footer {
     object-fit: cover;
 }
 
-.wishlist-grid,
-.wishes-grid {
+.wishlist-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
@@ -168,6 +178,7 @@ footer {
 }
 
 .wishlist-card,
+.wish-card,
 .footer-social-btn,
 .partner-box {
     border: 1px solid var(--color-border);
@@ -188,6 +199,13 @@ footer {
     line-height: 1.2;
     text-align: left;
     cursor: pointer;
+}
+
+.wish-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
 }
 
 .full-width {
@@ -237,20 +255,13 @@ footer hr {
     text-align: center;
 }
 
-.footer-social-btn {
-    cursor: pointer;
-}
-
 .detail-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.wishes-section {
-    width: 100%;
-}
-
+.wishes-section,
 .wishes-panel {
     width: 100%;
 }
@@ -270,4 +281,83 @@ footer hr {
 .detail-actions {
     display: flex;
     gap: 10px;
+}
+
+.wishes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    align-items: stretch;
+}
+
+.wish-card hr {
+    width: 100%;
+    margin: 0;
+    border: none;
+    border-top: 1px solid var(--color-border);
+}
+
+.wish-card-title {
+    margin: 0;
+    font-size: 24px;
+}
+
+.wish-card-info p {
+    margin: 0;
+}
+
+.wish-card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wish-status {
+    width: auto;
+    padding: 8px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background-color: var(--color-card);
+    font-weight: bold;
+}
+
+.wish-card-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.form-shell {
+    max-width: 520px;
+    margin: 0 auto 20px;
+}
+
+.form-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-row label {
+    font-weight: bold;
+}
+
+.form-row input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background-color: var(--color-card);
+    color: inherit;
+}
+
+.form-message {
+    min-height: 24px;
+    margin: 0;
+    font-weight: bold;
 }
