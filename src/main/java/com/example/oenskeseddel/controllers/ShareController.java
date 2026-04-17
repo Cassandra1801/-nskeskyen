@@ -1,9 +1,13 @@
 package com.example.oenskeseddel.controllers;
 
+
+import com.example.oenskeseddel.models.Wishlist;
 import com.example.oenskeseddel.services.WishlistService;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 @RequestMapping("/wishlist")
 public class ShareController {
 
@@ -14,8 +18,23 @@ public class ShareController {
     }
 
     @GetMapping("/{wishlistId}/share-link")
+    @ResponseBody
     public String getShareLink(@PathVariable Integer wishlistId) {
         return wishlistService.generateShareLink(wishlistId);
+    }
+
+    @GetMapping("/{username}/share/{wishlistId}")
+    public String showSharedWishlist(
+            @PathVariable String username,
+            @PathVariable Integer wishlistId,
+            Model model) {
+
+        Wishlist wishlist = wishlistService.getWishlistByUsernameAndId(username, wishlistId);
+
+        model.addAttribute("wishlist", wishlist);
+        model.addAttribute("username", username);
+
+        return "shared-wishlist";
     }
 
 }

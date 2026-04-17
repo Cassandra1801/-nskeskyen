@@ -4,9 +4,11 @@ import com.example.oenskeseddel.models.Wish;
 import com.example.oenskeseddel.models.Wishlist;
 import com.example.oenskeseddel.services.WishService;
 import com.example.oenskeseddel.services.WishlistService;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 @RequestMapping("/api/wishlists")
 public class WishlistController {
 
@@ -18,6 +20,7 @@ public class WishlistController {
         this.wishService = wishService;
     }
 
+    @ResponseBody
     @PostMapping("/create")
     public Wishlist createWishlist(@RequestParam Integer userId,
                                    @RequestParam String name) {
@@ -27,5 +30,11 @@ public class WishlistController {
     @PostMapping("/{wishlistId}/wishes")
     public Wish createWish(@PathVariable Integer wishlistId, @RequestParam String name) {
         return wishService.createWish(wishlistId, name);
+    }
+
+    @GetMapping("/{wishlistId}")
+    public String getWishlistPage(@PathVariable Integer wishlistId, Model model) {
+        model.addAttribute("wishlistId", wishlistId);
+        return "wishlist";
     }
 }
