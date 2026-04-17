@@ -1,0 +1,89 @@
+.shared-page {
+    margin: 0 0 20px;
+    width: 100%;
+    padding: 20px;
+    background-color: #efe7dc;
+    border: 1px solid #d7bfa6;
+    border-radius: 20px;
+}
+
+.shared-container {
+    width: 100%;
+    padding: 20px;
+    background-color: #faf6f1;
+    border: 1px solid #d7bfa6;
+    border-radius: 20px;
+}
+
+.shared-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.shared-title h1 {
+    margin: 0 0 10px;
+    font-size: 34px;
+    color: #2e1f0f;
+}
+
+.shared-title p {
+    margin: 0;
+    font-size: 17px;
+    color: #2e1f0f;
+}
+
+.shared-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.shared-card {
+    padding: 30px;
+    background-color: #faf6f1;
+    border: 1px solid #d7bfa6;
+    border-radius: 20px;
+}
+
+.shared-card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.shared-card-header img {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #e7dccd;
+}
+
+.shared-card-header h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #2e1f0f;
+}
+
+.shared-by {
+    margin: 0 0 20px;
+    font-size: 15px;
+    color: #2e1f0f;
+}
+
+.shared-by strong {
+    font-weight: bold;
+}
+
+.shared-card hr {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #d7bfa6;
+}
+
+.shared-card-footer {
+    font-size: 10px;
+    font-weight: bold;
+    color: #2e1f0f;
+}
