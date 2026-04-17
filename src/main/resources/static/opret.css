@@ -1,0 +1,98 @@
+.create-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+}
+
+.create-card {
+    width: 100%;
+    max-width: 650px;
+    padding: 50px;
+    background-color: #faf6f1;
+    border: 1px solid #d7bfa6;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.create-card h1 {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 20px;
+    color: #2e1f0f;
+}
+
+.create-card hr {
+    border: none;
+    border-top: 1px solid #d7bfa6;
+    margin-bottom: 30px;
+}
+
+.create-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2e1f0f;
+}
+
+.create-form input,
+.create-form select,
+.create-form textarea {
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    border: 1px solid #d7bfa6;
+    border-radius: 12px;
+    background-color: white;
+    color: #2e1f0f;
+    outline: none;
+}
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    padding: 0;
+    margin: 0;
+    transform: scale(1.4);
+    accent-color: #c9b09a;
+    cursor: pointer;
+}
+
+.checkbox-group label {
+    margin: 0;
+    cursor: pointer;
+}
+
+.create-form textarea {
+    min-height: 120px;
+    resize: none;
+}
+
+.create-btn-submit {
+    margin-top: 10px;
+    padding: 18px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2e1f0f;
+    background: #c9b09a;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+}

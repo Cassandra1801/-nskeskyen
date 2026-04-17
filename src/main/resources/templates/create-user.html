@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create User</title>
+    <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}">
+</head>
+<body>
+    <main class="page-main">
+        <section class="form-shell">
+            <div class="form-card">
+                <h1>Create Account</h1>
+
+                <form id="createUserForm" class="form-card">
+                    <div class="form-row">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="name">Name</label>
+                        <input type="text" id="name">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required>
+                    </div>
+
+                    <button type="submit" class="form-button">Create account</button>
+                </form>
+
+                <p id="message" class="form-message"></p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById("createUserForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            const user = {
+                username: document.getElementById("username").value,
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value
+            };
+
+            try {
+                const response = await fetch("/users", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(user)
+                });
+
+                if (response.ok) {
+                    const createdUser = await response.json();
+                    document.getElementById("message").textContent =
+                        "User created: " + createdUser.username;
+                } else {
+                    const errorText = await response.text();
+                    document.getElementById("message").textContent =
+                        "Error: " + errorText;
+                }
+            } catch (error) {
+                document.getElementById("message").textContent =
+                    "Something went wrong.";
+            }
+        });
+    </script>
+</body>
+</html>
