@@ -13,7 +13,7 @@ import jakarta.persistence.Table;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "wishlist")
+@Table(name = "wishlists")
 public class Wishlist {
 
     @Id

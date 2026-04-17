@@ -70,6 +70,8 @@ footer {
     gap: 12px;
     font-size: 28px;
     font-weight: bold;
+    text-decoration: none;
+    color: var(--color-text);
 }
 
 .logo img {
@@ -140,6 +142,8 @@ footer {
     width: fit-content;
     padding: 16px 40px;
     font-size: 22px;
+    color: var(--color-text);
+    text-decoration: none;
 }
 
 .wishlist-overview {
